@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="RI:  "
+         android:textColor="@color/black"
+         android:textSize="25sp">
+     </TextView>
+
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="Range 1.5 to 1.6"
+         android:textSize="25sp"
+         android:layout_gravity="center"
+         android:gravity="center"
+         android:id="@+id/ri"></EditText>
+     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Na:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 12 to 16"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/na"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mg:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 0 to 5"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:id="@+id/mg"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Al:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 0 to 4"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:id="@+id/al"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Si:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 69 to 75"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/si"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="K:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 0 to 7"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/k"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ca:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 5 to 15"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/ca"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ba:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 0 to 4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/ba"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fe:  "
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Range 0 to 2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:id="@+id/fe"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="25sp">
+            </TextView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit"
+                android:textSize="25sp"
+                android:text="SUBMIT"
+                android:layout_gravity="start"
+                android:gravity="start">
+            </Button>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:id="@+id/cancel"
+                android:text="CANCEL"
+                android:layout_gravity="end"
+                android:gravity="end">
+            </Button>
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

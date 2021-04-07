@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  background-color: #87CEFA;
+
+  color: black;
+  padding: 5px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 5px 5px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #87CEFA;
+float:left;}
+.button3 {background-color: #87CEFA; float: right;}
+
+th, td {
+  padding: 3px;
+  text-align: left;
+}
+.hero-image {
+  background-color:#FFFFE0;
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<center>
+
+ <table style="color:#A52A2A;background:#E0FFFF;border:3px double black;width:30%;height:50%">
+      <h1 style="font-style: oblique; color:#DC143C;"></h1>
+	  <form action='/predict' method="POST">
+	  
+      <tr><td>RI:</td>
+	  <td><br><input type="number" min="1.5" max="1.6" step="any" placeholder="RefractiveIndex" name="ri" required><br>  Range 1.5 to 1.6<br></td></tr>
+	  <tr><td>Na:</td>
+	  <td><input type="number" min="12" max="16" step="any" placeholder="Sodium" name="na" required><br>  Range 12 to 16<br></td>
+	  </tr>
+      <tr><td>Mg:</td>
+	  <td><input type="number" min="0" max="5" step="any" placeholder="Magnesium" name="mg" required> <br> Range 0 to 5<br></td></tr>
+	  <tr><td>AI:</td>
+	  <td><input type="number" min="0" max="4" step="any" placeholder="Aluminum" name="ai" required> <br>  Range 0 to 4<br></td></tr>
+      <tr><td>Si:</td>
+	  <td><input type="number"  min="69" max="75" step="any" placeholder="Silicon" name="si" required><br> Range 69 to 75<br></td></tr>
+	  <tr><td>K:</td>
+	  <td><input type="number" min="0" max="7"  step="any" placeholder="Potassium" name="k" required><br>Range 0 to 7<br></td></tr>
+      <tr><td>Ca:</td>
+	  <td><input type="number"  min="5" max="15" step="any" placeholder="Calicium" name="ca" required><br> Range 5 to 15<br></td></tr>
+	  <tr><td>Ba:</td>
+	  <td><input type="number"  min="0" max="4" step="any" placeholder="Barium" name="ba" required><br>Range 0 to 4<br></td></tr>
+      <tr><td>Fe:</td>
+	  <td><input type="number"  min="0" max="2" step="any" placeholder="Iron" name="fe" required> <br> Range 0 to 2 <br></td></tr>
+      <tr><td><button class="button button3">submit</td></form>
+      <form method="get" action="/check">
+      <td><button class="button button2">Cancel</button></td></tr>
+    </form>
+     
+
+     
+ </table>
+ 
+ </center>
+</body>
+</html>
