@@ -40,7 +40,7 @@ def predict():
     elif output ==5:
         r='This glass type is containers'
     elif output ==6:
-        r='This glass type is tableware'
+        r='This glass type is headlamps'
     else:
         r='This glass type is tableware'
     return r
