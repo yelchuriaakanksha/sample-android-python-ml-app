@@ -28,6 +28,7 @@ def predict():
     data[['ri','na','mg','ai','si','k','ca','ba','fe']] = StandardScaler().fit_transform(data[['ri','na','mg','ai','si','k','ca','ba','fe']])
     res=mdl.predict(data)
     output=res[0]
+    print(output)
 
     if output == 1:
         r='This glass type is building window float processed'
