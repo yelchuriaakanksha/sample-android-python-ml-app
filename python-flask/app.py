@@ -43,6 +43,7 @@ def predict():
         r='This glass type is tableware'
     else:
         r='This glass type is tableware'
+    return r
 
 
 
