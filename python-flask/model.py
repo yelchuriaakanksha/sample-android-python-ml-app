@@ -25,43 +25,27 @@ upper = np.triu(np.ones_like(corr_matrix,dtype=bool))
 k=corr_matrix.mask(upper)
 
 
-# Find index of feature columns with correlation greater than 0.8
-to_drop = [column for column in k.columns if any(k[column] > 0.8)]
-# Drop features
-after_dropped=mydataset.drop(mydataset[to_drop], axis=1)
-#print(to_drop)
-#print(len(after_dropped.columns))
 
-X = after_dropped.iloc[:, :-1].values # attributes to determine dependent variable / Class
-y = after_dropped.iloc[:, -1].values# dependent variable / Class
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=42)
-X1_train, X1_test, y1_train, y1_test = train_test_split(X, y, test_size=0.20, random_state=42)
-#plt.figure(figsize = (8,8))
-sns.heatmap(after_dropped.corr(), cmap = 'pink',linewidths=0.1,vmin=-1,vmax=1,annot = True)
-#plt.title("Correlation Heatmap after Removing highly correlated values", fontsize=12)
-#plt.show()
+features = ['RI','Na','Mg','Al','Si','K','Ca','Ba','Fe']
+label = ['Type of glass']
 
+x = mydataset[features]
 
-names=mydataset.columns
-for i in names:
-    mydataset[i]=mydataset[i].astype(np.int)
-x = mydataset.iloc[:,:-1].values 
-y = mydataset.iloc[:,4].values
-#print('x is:',x)
-#print('y is:',y)
-#splitting into training and test sets
-x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.30, random_state=0)
-#print('x_train set:',x_train)
+y = mydataset[label]
+
+#names=mydataset.columns
+#for i in names:
+ #   mydataset[i]=mydataset[i].astype(np.int)
+#x = mydataset.iloc[:,0:9].values 
+#y = mydataset.iloc[:,4].values
+
+x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.30, random_state=42)
 
 
 
-#standard scalar
-#print("standard scalar")
+
 stnd = StandardScaler()
 mydataset = stnd.fit_transform(mydataset)
-#print('standardization:',mydataset)
-
-
 
 #svm
 from sklearn.svm import SVC
@@ -70,17 +54,46 @@ from sklearn.metrics import accuracy_score
 clf = SVC(kernel='linear')
 clf.fit(x_train,y_train)
 e_pred = clf.predict(x_test)
-#print('Accuracy of svm :',accuracy_score(y_test,e_pred)*100)
+print('Accuracy of svm :',accuracy_score(y_test,e_pred)*100)
 a6=accuracy_score(y_test,e_pred)*100
 
+#linear regression
+from sklearn.linear_model import LinearRegression 
+from sklearn.metrics import r2_score
+clf = LinearRegression(normalize=True)
+clf.fit(x_train,y_train)
+o_pred = clf.predict(x_test)
+print('accuracy of linear regression:')
+a1=r2_score(y_test,o_pred)*100
+print(a1)
 
 
 
-clf = SVC()
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(random_state = 0)
+trained_model=clf.fit(x_train,y_train)
+trained_model.fit(x_train,y_train )
+# Predicting the Test set results
+y_pred = clf.predict(x_test)
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
+cm3 = confusion_matrix(y_test, y_pred)
+print(cm3)
+
+
+
+
+clf = RandomForestClassifier()
 #Fitting model with trainig data
 clf.fit(x_train,y_train)
 # Saving model to disk
 pickle.dump(clf, open('model.pkl','wb'))
 # Loading model to compare the results
 model = pickle.load(open('model.pkl','rb'))
-#print(model.predict([[2,3,4,5,6,7,8,9]]))
+print(model.predict([[1.52101,13.64,4.49,1.1,71.78,0.06,8.75,0,0]]))#1
+print(model.predict([[1.51645,13.44,3.61,1.54,72.39,0.66,8.03,0,0]]))#2
+print(model.predict([[1.51655	,13.41,	3.39,	1.28,	72.64,	0.52,	8.65,	0,	0]]))#3
+print(model.predict([[1.51969,12.64,0,1.65  ,73.75,0.38,11.53,0,0]]))#5
+print(model.predict([[1.51829	,14.46,	2.24,	1.62,	72.38,	0,	9.26,	0,	0]]))#6
+print(model.predict([[1.52065,14.36 ,0,2.02 ,73.42,0,8.44,1.64,0]]))#7
+
