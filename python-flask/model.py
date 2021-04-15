@@ -90,10 +90,5 @@ clf.fit(x_train,y_train)
 pickle.dump(clf, open('model.pkl','wb'))
 # Loading model to compare the results
 model = pickle.load(open('model.pkl','rb'))
-print(model.predict([[1.52101,13.64,4.49,1.1,71.78,0.06,8.75,0,0]]))#1
-print(model.predict([[1.51645,13.44,3.61,1.54,72.39,0.66,8.03,0,0]]))#2
-print(model.predict([[1.51655	,13.41,	3.39,	1.28,	72.64,	0.52,	8.65,	0,	0]]))#3
-print(model.predict([[1.51969,12.64,0,1.65  ,73.75,0.38,11.53,0,0]]))#5
-print(model.predict([[1.51829	,14.46,	2.24,	1.62,	72.38,	0,	9.26,	0,	0]]))#6
-print(model.predict([[1.52065,14.36 ,0,2.02 ,73.42,0,8.44,1.64,0]]))#7
+
 
